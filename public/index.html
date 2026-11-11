@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090a0d">
+    <meta name="description" content="Discover what's next. AR GAMES is getting ready for its first release.">
+    <title>AR GAMES — Your next world awaits</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css?v=4">
+    <script src="../app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="AR GAMES home">
+        <span class="brand-mark">AR<span>.</span></span>
+        <span class="brand-name">GAMES</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#games">Games</a>
+        <a class="nav-link" href="#about">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="login-button" id="account-button" type="button">Sign in <span aria-hidden="true">↗</span></button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-image" role="img" aria-label="A cinematic night sky"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <div class="eyebrow"><span class="live-dot"></span> A new world is on the way</div>
+          <h1>Play starts<br>right <span>here.</span></h1>
+          <p>Big worlds. Unforgettable stories.<br class="desktop-break"> Your next adventure starts with AR GAMES.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#games">Explore AR GAMES <span aria-hidden="true">→</span></a>
+            <button class="button button-quiet" id="hero-account" type="button"><span class="play-icon">▶</span> Join the community</button>
+          </div>
+        </div>
+        <div class="hero-caption"><span>01</span><i></i><span>Made for the love of play</span></div>
+        <div class="hero-index">AR / ORIGINALS</div>
+      </section>
+
+      <section class="games-section section-shell" id="games">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow eyebrow-muted"><span class="heading-line"></span> THE COLLECTION</div>
+            <h2>Our worlds <span>are coming soon.</span></h2>
+          </div>
+        </div>
+        <div class="empty-state" id="empty-state" aria-live="polite">
+          <span class="empty-state-mark" aria-hidden="true">AR<span>.</span></span>
+          <h3>No games yet.</h3>
+          <p>We're getting everything ready. Check back soon to discover the first AR GAMES releases.</p>
+        </div>
+      </section>
+
+      <section class="community-banner section-shell" id="about">
+        <div class="community-art" aria-hidden="true"><span>AR</span></div>
+        <div class="community-copy">
+          <div class="eyebrow eyebrow-muted"><span class="heading-line"></span> YOUR PLACE IN THE STORY</div>
+          <h2>Every game starts with an idea.<br><span>Be here for the first one.</span></h2>
+          <p>Create an account and be ready to save your favorites when our games arrive.</p>
+          <button class="button button-primary" id="community-account" type="button">Create a free account <span aria-hidden="true">→</span></button>
+        </div>
+        <span class="banner-coordinate">34° 03' 08.4" N</span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark">AR<span>.</span></span><span class="brand-name">GAMES</span></a>
+      <p>A home for players and big ideas.</p>
+      <span class="copyright">© 2026 AR GAMES. All rights reserved.</span>
+    </footer>
+
+    <div class="modal-backdrop" id="auth-modal" hidden>
+      <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+        <button class="modal-close" type="button" aria-label="Close">×</button>
+        <div class="modal-brand">AR<span>.</span> GAMES</div>
+        <div class="eyebrow eyebrow-muted"><span class="heading-line"></span> YOUR ACCOUNT</div>
+        <h2 id="auth-title">Welcome back.</h2>
+        <p class="modal-description" id="auth-description">Sign in to your account.</p>
+        <div class="auth-tabs" role="tablist" aria-label="Account options">
+          <button type="button" class="auth-tab active" data-mode="login" role="tab" aria-selected="true">Sign in</button>
+          <button type="button" class="auth-tab" data-mode="register" role="tab" aria-selected="false">Create account</button>
+        </div>
+        <form id="auth-form">
+          <label class="form-field" id="username-field" hidden>
+            <span>Username</span>
+            <input name="username" type="text" minlength="2" maxlength="30" autocomplete="username" placeholder="Choose a username">
+          </label>
+          <label class="form-field">
+            <span>Email address</span>
+            <input name="email" type="email" maxlength="254" autocomplete="email" required placeholder="name@example.com">
+          </label>
+          <label class="form-field">
+            <span>Password</span>
+            <input name="password" type="password" minlength="8" maxlength="128" autocomplete="current-password" required placeholder="At least 8 characters">
+          </label>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <button class="button button-primary submit-button" type="submit"><span id="submit-label">Sign in</span><span aria-hidden="true">→</span></button>
+        </form>
+        <form id="verification-form" hidden>
+          <p class="verification-copy">We sent a 6-digit code to <strong id="verification-email"></strong>. Enter it below to verify your email and create your account.</p>
+          <label class="form-field">
+            <span>Verification code</span>
+            <input name="code" type="text" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="one-time-code" required placeholder="000000" aria-label="6-digit verification code">
+          </label>
+          <p class="form-error" id="verification-error" role="alert" hidden></p>
+          <button class="button button-primary submit-button" type="submit"><span>Verify email</span><span aria-hidden="true">→</span></button>
+          <button class="resend-button" id="resend-code" type="button">Resend code</button>
+        </form>
+        <p class="privacy-note">Your details are stored securely and only used for your account.</p>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

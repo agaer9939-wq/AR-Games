@@ -1,0 +1,16 @@
+{
+  "name": "ar-games",
+  "version": "1.0.0",
+  "private": true,
+  "description": "English gaming landing page with verified user accounts",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "nodemailer": "^10.5.0"
+  }
+}
